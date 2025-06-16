@@ -1,0 +1,5 @@
+.hero_section {
+    background: linear-gradient(to right, gray, darkgray);
+    color: white;
+    padding: 5rem 0;
+}

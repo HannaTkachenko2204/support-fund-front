@@ -20,7 +20,9 @@ const Header = () => {
             <svg className={s.svg}>
               <use xlinkHref="/assets/icons/icons.svg#icon-user-circle-o"></use>
             </svg>
-            <button type="button">Підтримати фонд</button>
+            <a href="#donate" className={s.donate_link}>
+              Підтримати фонд
+            </a>
           </div>
         </div>
       </Container>
