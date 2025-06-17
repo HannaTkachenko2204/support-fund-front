@@ -34,7 +34,16 @@
   color: green;
 }
 
+.link_light:hover {
+  background-color: lightgray;
+}
+
 .link_dark {
   background-color: green;
   color: white;
 }
+
+.link_dark:hover {
+  background-color: darkgreen;
+}
+

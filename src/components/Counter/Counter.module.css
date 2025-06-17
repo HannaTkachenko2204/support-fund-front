@@ -1,6 +1,30 @@
+.pos {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+  height: fit-content;
+}
+
+.icon_circ {
+  background-color: lightgray;
+  border-radius: 9999px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .icon {
     fill: green;
     width: 35px;
     height: 40px;
-  }
+}
+
+.label, .count {
+  color: black;
+}
   

@@ -9,15 +9,17 @@ const Hero = () => {
     <>
       <section className={s.hero_section}>
         <Container>
-          {/* <div className={}> */}
-          <h1>Підтримка героїв України</h1>
-          <p>
-            Волонтерська платформа допомоги українським захисникам та їхнім
-            родинам
-          </p>
-          <HelpLinks />
-          <Counter />
-          {/* </div> */}
+          <div className={s.flex}>
+            <div>
+              <h1>Підтримка героїв України</h1>
+              <p className={s.text}>
+                Волонтерська платформа допомоги українським захисникам та їхнім
+                родинам
+              </p>
+              <HelpLinks />
+            </div>
+            <Counter />
+          </div>
         </Container>
       </section>
     </>
