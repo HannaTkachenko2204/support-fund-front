@@ -11,7 +11,7 @@ const Hero = () => {
         <Container>
           <div className={s.flex}>
             <div>
-              <h1>Підтримка героїв України</h1>
+              <h1 className={s.title}>Підтримка героїв України</h1>
               <p className={s.text}>
                 Волонтерська платформа допомоги українським захисникам та їхнім
                 родинам

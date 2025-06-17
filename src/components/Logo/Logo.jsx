@@ -7,7 +7,7 @@ const Logo = () => {
         <svg className={s.svg}>
           <use xlinkHref="/assets/icons/icons.svg#icon-shield"></use>
         </svg>
-        ФОНД ЗСУ
+        <h2>ФОНД ЗСУ</h2>
       </a>
     </>
   );

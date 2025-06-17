@@ -1,10 +1,9 @@
 .logo {
     display: flex;
     align-items: center;
-    font-size: 800;
+    text-transform: uppercase;
     color: green;
     fill: green;
-    font-weight: 900;
 }
 
 .logo:hover {
