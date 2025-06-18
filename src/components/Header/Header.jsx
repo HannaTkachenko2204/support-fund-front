@@ -10,20 +10,11 @@ const Header = () => {
     <header>
       <Container>
         <div className={s.header}>
-          <div className={s.header_left}>
             <Logo />
-          </div>
-          <div className={s.header_center}>
             <Navigation />
-          </div>
-          <div className={s.header_right}>
             <svg className={s.svg}>
               <use xlinkHref="/assets/icons/icons.svg#icon-user-circle-o"></use>
             </svg>
-            <a href="#donate" className={s.donate_link}>
-              Підтримати фонд
-            </a>
-          </div>
         </div>
       </Container>
     </header>

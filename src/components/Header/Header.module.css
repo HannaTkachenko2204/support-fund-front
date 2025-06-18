@@ -9,41 +9,9 @@
     fill: darkgreen;
 }
 
-/* header position */
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 7rem;
 }
-  
-.header_left {
-    flex: 0 0 auto;
-}
-  
-.header_center {
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: center;
-}
-  
-.header_right {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-/* header link */
-.donate_link {
-    background-color: green;
-    color: #fff;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 0.375rem;
-    cursor: pointer;
-  }
-
-  .donate_link:hover {
-    background-color: darkgreen;
-  }

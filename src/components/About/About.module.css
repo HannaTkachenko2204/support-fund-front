@@ -2,23 +2,6 @@
 padding: 5rem 0;
 }
 
-.subtitle {
-    text-transform: uppercase;
-    color: green;
-    text-align: center;
-}
-  
-.title {
-    color: black;
-    text-align: center;
-}
-  
-.description {
-    color: gray;
-    text-align: center;
-}
-
-/* Features grid */
 .features {
     display: grid;
     grid-template-columns: 1fr;
@@ -32,42 +15,3 @@ padding: 5rem 0;
       gap: 2rem;
     }
 }
-
-  /* Card styling */
-.feature {
-    background-color: lightgray;
-    border-radius: 0.75rem;
-    padding: 2rem 1.5rem 1.5rem;
-    position: relative;
-}
-
-.icon_wrapper {
-    position: absolute;
-    top: -1.5rem;
-    left: 1.5rem;
-    width: 3rem;
-    height: 3rem;
-    background-color: green;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.375rem;
-    font-size: 1.5rem;
-}
-
-.icon {
-    fill: white;
-    width: 38px;
-    height: 38px;
-}
-
-.feature_title {
-    margin-top: 2rem;
-}
-  
-.feature_description {
-    margin-top: 1rem;
-    color: gray;
-}
-
