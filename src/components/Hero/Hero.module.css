@@ -8,6 +8,14 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .hero {
+      flex-direction: row;
+    }
 }
 
 .title {

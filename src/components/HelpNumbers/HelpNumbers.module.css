@@ -1,0 +1,61 @@
+.section {
+    background: darkgreen;
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.title {
+    text-transform: uppercase;
+}
+
+.description {
+    color: lightgray;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.item {
+    text-align: center;
+    flex: 1 1 200px;
+    max-width: 250px;
+}
+  
+.statIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background-color: green;
+    font-size: 1.25rem;
+}
+  
+.icon {
+    fill: white;
+    width: 26px;
+    height: 26px;
+}
+  
+.value {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: white;
+}
+  
+.label {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: lightgray;
+}
