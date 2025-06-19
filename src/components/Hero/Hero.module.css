@@ -20,16 +20,19 @@
 
 .title {
     text-transform: uppercase;
+    text-align: center;
 }
 
 .text {
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .links {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    justify-content: center;
 }
 
 @media (min-width: 485px) {

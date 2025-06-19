@@ -1,4 +1,5 @@
 import About from '../About/About';
+import Footer from '../Footer/Footer';
 import GatHelp from '../GatHelp/GatHelp';
 import Header from '../Header/Header';
 import HelpNumbers from '../HelpNumbers/HelpNumbers';
@@ -17,6 +18,7 @@ function App() {
         <Partners />
         <GatHelp />
       </main>
+      <Footer />
     </>
   );
 }
