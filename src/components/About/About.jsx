@@ -2,11 +2,10 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Container from '../Container/Container';
 import SectionHeader from '../SectionHeader/SectionHeader';
-import FeatureCard from '../FeatureCard/FeatureCard';
-import s from './About.module.css'
+import AboutCard from '../AboutCard/AboutCard';
+import s from './About.module.css';
 
 const About = () => {
-
   const location = useLocation();
 
   useEffect(() => {
@@ -30,17 +29,17 @@ const About = () => {
           description="Офіційна волонтерська платформа для координації допомоги військовим та їхнім родинам"
         />
         <div className={s.features}>
-          <FeatureCard
+          <AboutCard
             iconId="icon-flag"
             title="Місія фонду"
             description="Надання всебічної підтримки українським захисникам і членам їхніх родин через координацію волонтерських, громадських та благодійних ініціатив."
           />
-          <FeatureCard
+          <AboutCard
             iconId="icon-handshake-o"
             title="Напрями діяльності"
             description="Матеріальна допомога, медична реабілітація, психологічна підтримка, юридичний супровід, освітні програми для дітей та родин військовослужбовців."
           />
-          <FeatureCard
+          <AboutCard
             iconId="icon-star-half"
             title="Гарантії прозорості"
             description="Відкрита фінансова звітність. Кожна гривня враховується та використовується виключно на потреби захисників. Регулярні звіти публікуються для донорів і партнерів."

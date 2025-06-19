@@ -1,6 +1,6 @@
 .footer {
-    background-color: rgb(25, 25, 25);
-    color: white;
+    background-color: #1c1b15;
+    color: #959591;
     padding: 3rem 0;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .subtext {
-    color: gray;
+    color: #959591;
 }
 
 .icon {
@@ -59,9 +59,9 @@
 }
 
 .bottom {
-  border-top: 1px solid gray;
+  border-top: 1px solid #959591;
   padding-top: 2rem;
   margin-top: 3rem;
   text-align: center;
-  color: gray;
+  color: #959591;
 }

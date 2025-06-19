@@ -1,6 +1,6 @@
 .section {
-    background: linear-gradient(to right, #294d7f, light#294d7f);
-    color: black;
+    background: linear-gradient(to bottom, #294d7f 0%, #294d7f 5%, #feeea8 100%);
+    color: #1c1b15;
     padding: 3rem 0;
 }
 
@@ -8,6 +8,7 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    gap: 2rem;
 }
 
 @media (min-width: 485px) {
@@ -31,7 +32,6 @@
 .subtext {
     color: white;
     display: block;
-    margin-bottom: 2rem;
     text-align: center;
 }
   

@@ -4,6 +4,7 @@
   }
   
   .nav_list {
+    color: #1c1b15;
     list-style: none;
     display: flex;
     gap: 2rem;

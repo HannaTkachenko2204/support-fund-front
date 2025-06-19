@@ -16,6 +16,7 @@
   background-color: transparent;
   border: 1px solid #294d7f;
   color: #294d7f;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .link_light:hover {
@@ -25,10 +26,10 @@
 .link_dark {
   background-color: #294d7f;
   color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .link_dark:hover {
-  /* background-color: #1a3459; */
   background-color: #1a3459;
 }
 

@@ -1,6 +1,6 @@
-import s from './FeatureCard.module.css';
+import s from './AboutCard.module.css';
 
-const FeatureCard = ({ iconId, title, description }) => {
+const AboutCard = ({ iconId, title, description }) => {
   return (
     <article className={s.feature}>
       <div className={s.icon_wrapper}>
@@ -14,4 +14,4 @@ const FeatureCard = ({ iconId, title, description }) => {
   );
 };
 
-export default FeatureCard;
+export default AboutCard;
