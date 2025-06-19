@@ -1,8 +1,8 @@
-import s from './PartnersLogos.module.css';
+import s from './PartnersCard.module.css';
 
-const PartnersLogos = ({ partners }) => {
+const PartnersCard = ({ partners }) => {
   return (
-    <div className={s.partnersLogos}>
+    <div className={s.flex}>
       {partners.map((partner, index) => (
         <a
           key={index}
@@ -15,7 +15,7 @@ const PartnersLogos = ({ partners }) => {
         </a>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default PartnersLogos
+export default PartnersCard;

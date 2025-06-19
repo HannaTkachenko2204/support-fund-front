@@ -1,5 +1,5 @@
 import Container from "../Container/Container"
-import PartnersLogos from "../PartnersLogos/PartnersLogos";
+import PartnersCard from '../PartnersCard/PartnersCard';
 import SectionHeader from "../SectionHeader/SectionHeader"
 import s from './Partners.module.css'
 
@@ -39,16 +39,16 @@ const partners = [
 const Partners = () => {
   return (
     <Container>
-        <section className={s.partners_section}>
+      <section className={s.partners_section}>
         <SectionHeader
           subtitle="Наші партнери"
           title="Державні, суспільні та міжнародні організації, з якими ми співпрацюємо або координуємось"
           description="Спільна робота для максимально ефективної допомоги"
         />
-        <PartnersLogos partners={partners} />
-        </section>
+        <PartnersCard partners={partners} />
+      </section>
     </Container>
-  )
+  );
 }
 
 export default Partners

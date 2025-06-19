@@ -5,6 +5,12 @@
     text-align: center;
 }
 
+@media (max-width: 768px) {
+    .section {
+    background: linear-gradient(to bottom, #feeea8 0%, #294d7f 10%, #294d7f 90%, #feeea8 100%);
+    }
+}
+
 .title {
     text-transform: uppercase;
 }

@@ -41,27 +41,27 @@
   color: #294d7f;
 }
 
-@media (min-width: 768px) {
-    .flex {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-  
-    .about {
-      flex: 2;
-    }
-  
-    .contacts,
-    .docs {
-      flex: 1;
-    }
-}
-
 .bottom {
   border-top: 1px solid #959591;
   padding-top: 2rem;
   margin-top: 3rem;
   text-align: center;
   color: #959591;
+}
+
+@media (min-width: 768px) {
+  .flex {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .about {
+    flex: 2;
+  }
+
+  .contacts,
+  .docs {
+    flex: 1;
+  }
 }
