@@ -4,6 +4,7 @@
   align-items: center;
   background-color: white;
   padding: 1rem;
+  border: 1px solid green;
   border-radius: 0.5rem;
   width: fit-content;
   height: fit-content;
