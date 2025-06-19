@@ -1,5 +1,5 @@
 .section {
-    background: linear-gradient(to right, darkgray, lightgray);
+    background: linear-gradient(to right, blue, lightblue);
     color: black;
     padding: 3rem 0;
 }

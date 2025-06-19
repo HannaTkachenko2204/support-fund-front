@@ -1,5 +1,5 @@
 .section {
-    background: linear-gradient(to right, darkgreen, green);;
+    background: linear-gradient(to right, blue, lightblue);
     color: white;
     padding: 5rem 0;
     text-align: center;
@@ -36,7 +36,7 @@
     margin: 0 auto 1rem;
     border: 1px solid white;
     border-radius: 50%;
-    background-color: green;
+    background-color: blue;
     font-size: 1.25rem;
 }
   

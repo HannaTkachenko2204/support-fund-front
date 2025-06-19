@@ -14,8 +14,8 @@
 
 .link_light {
   background-color: transparent;
-  border: 1px solid green;
-  color: green;
+  border: 1px solid blue;
+  color: blue;
 }
 
 .link_light:hover {
@@ -23,12 +23,12 @@
 }
 
 .link_dark {
-  background-color: green;
+  background-color: blue;
   color: white;
 }
 
 .link_dark:hover {
-  background-color: darkgreen;
+  background-color: darkblue;
 }
 
 .icon_dark,
@@ -38,7 +38,7 @@
 }
 
 .icon_dark {
-  fill: green;
+  fill: blue;
 }
 
 .icon_light {

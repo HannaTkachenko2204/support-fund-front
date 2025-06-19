@@ -4,7 +4,7 @@
   align-items: center;
   background-color: white;
   padding: 1rem;
-  border: 1px solid green;
+  border: 1px solid blue;
   border-radius: 0.5rem;
   width: fit-content;
   height: fit-content;
@@ -20,7 +20,7 @@
 }
 
 .icon {
-    fill: green;
+    fill: blue;
     width: 35px;
     height: 40px;
 }
