@@ -1,5 +1,5 @@
 .section {
-    background: darkgreen;
+    background: linear-gradient(to right, darkgreen, green);;
     color: white;
     padding: 5rem 0;
     text-align: center;

@@ -1,4 +1,5 @@
 import About from '../About/About';
+import GatHelp from '../GatHelp/GatHelp';
 import Header from '../Header/Header';
 import HelpNumbers from '../HelpNumbers/HelpNumbers';
 import Hero from '../Hero/Hero';
@@ -14,6 +15,7 @@ function App() {
         <About />
         <HelpNumbers />
         <Partners />
+        <GatHelp />
       </main>
     </>
   );
