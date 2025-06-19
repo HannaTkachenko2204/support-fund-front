@@ -2,13 +2,13 @@
     display: flex;
     align-items: center;
     text-transform: uppercase;
-    color: blue;
-    fill: blue;
+    color: #294d7f;
+    fill: #294d7f;
 }
 
 .logo:hover {
-    fill: darkblue;
-    color: darkblue;
+    fill: #1a3459;
+    color: #1a3459;
 }
 
 .svg {

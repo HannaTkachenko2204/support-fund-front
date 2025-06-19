@@ -1,12 +1,29 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Container from '../Container/Container';
 import SectionHeader from '../SectionHeader/SectionHeader';
 import FeatureCard from '../FeatureCard/FeatureCard';
 import s from './About.module.css'
 
 const About = () => {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const sectionId = location.hash.replace('#', '');
+      const section = document.getElementById(sectionId);
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }, 100); // трішки зачекати, щоб DOM встиг змонтуватись
+      }
+    }
+  }, [location]);
+
   return (
     <Container>
-      <section className={s.section}>
+      <section id="about" className={s.section}>
         <SectionHeader
           subtitle="Про фонд"
           title="Всеукраїнська ініціатива підтримки захисників України"
