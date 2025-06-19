@@ -6,7 +6,7 @@ import s from './About.module.css'
 const About = () => {
   return (
     <Container>
-      <section id="about" className={s.about_section}>
+      <section className={s.section}>
         <SectionHeader
           subtitle="Про фонд"
           title="Всеукраїнська ініціатива підтримки захисників України"
