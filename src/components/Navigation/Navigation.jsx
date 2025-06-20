@@ -1,21 +1,29 @@
 import { Link } from 'react-router-dom';
 import s from './Navigation.module.css';
 
-const Navigation = () => {
+const Navigation = ({ onLinkClick }) => {
   return (
     <nav className={s.nav}>
       <ul className={s.nav_list}>
         <li>
-        <Link to="/">Головна</Link>
+          <Link to="/" onClick={onLinkClick}>
+            Головна
+          </Link>
         </li>
         <li>
-        <Link to="/help">Отримати допомогу</Link>
+          <Link to="/help" onClick={onLinkClick}>
+            Отримати допомогу
+          </Link>
         </li>
         <li>
-        <Link to="/donate">Задонатити</Link>
+          <Link to="/donate" onClick={onLinkClick}>
+            Задонатити
+          </Link>
         </li>
         <li>
-        <Link to="/stories">Історії допомоги</Link>
+          <Link to="/stories" onClick={onLinkClick}>
+            Історії допомоги
+          </Link>
         </li>
       </ul>
     </nav>

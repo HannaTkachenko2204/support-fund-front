@@ -26,3 +26,49 @@
 .svg:hover {
     fill: #1a3459;
 }
+
+.burger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+  
+.burgerIcon {
+    width: 32px;
+    height: 32px;
+    fill: #294d7f;
+}
+  
+.mobileMenu {
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    padding: 1rem 1.5rem;
+    animation: dropdown 0.3s ease-out;
+    border-radius: 0.375rem;
+    border: 1px solid #294d7f;
+    width: max-content;
+  }
+  
+@keyframes dropdown {
+    from {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+      display: none;
+    }
+}
