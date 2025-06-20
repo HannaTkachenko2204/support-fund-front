@@ -1,12 +1,21 @@
 import { Link } from 'react-router-dom';
 import s from './Navigation.module.css';
+import useScrollToTop from '../../hooks/useScrollToTop';
 
 const Navigation = ({ onLinkClick }) => {
+  const scrollToTop = useScrollToTop();
+
   return (
     <nav className={s.nav}>
       <ul className={s.nav_list}>
         <li>
-          <Link to="/" onClick={onLinkClick}>
+        <Link
+            to="/"
+            onClick={() => {
+              scrollToTop();
+              onLinkClick && onLinkClick();
+            }}
+          >
             Головна
           </Link>
         </li>
