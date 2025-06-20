@@ -41,7 +41,7 @@
     transform-origin: bottom left;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .nav_list {
       flex-direction: column;
       align-items: flex-start;
