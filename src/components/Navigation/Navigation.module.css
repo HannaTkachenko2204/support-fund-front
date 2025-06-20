@@ -12,6 +12,31 @@
     padding: 0;
   }
 
+  .nav_list a {
+    text-decoration: none;
+    color: #1c1b15;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .nav_list a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(to right, #294d7f, #feeea8);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+  
   .nav_list a:hover {
     color: #1a3459;
+  }
+  
+  .nav_list a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }

@@ -7,9 +7,9 @@ import s from './Header.module.css';
 
 const Header = () => {
   return (
-    <header>
+    <header className={s.header}>
       <Container>
-        <div className={s.header}>
+        <div className={s.inner}>
             <Logo />
             <Navigation />
             <svg className={s.svg}>

@@ -1,3 +1,21 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7rem;
+}
+
 .svg {
     width: 40px;
     height: 40px;
@@ -7,11 +25,4 @@
 
 .svg:hover {
     fill: #1a3459;
-}
-
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 7rem;
 }
