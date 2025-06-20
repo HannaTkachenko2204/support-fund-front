@@ -11,7 +11,7 @@ const Counter = () => {
         </div>
         <div>
           <p className={s.label}>Зібрано коштів</p>
-          <p className={s.count}>2.1 млн грн</p>
+          <p className={s.count}>2.1 млн гривень</p>
         </div>
       </div>
     </>

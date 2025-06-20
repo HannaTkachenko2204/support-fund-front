@@ -19,10 +19,12 @@
 .text {
     margin-bottom: 0.5rem;
     text-align: center;
+    font-size: 1.1rem;
 }
 
 .subtext {
     color: #959591;
+    font-size: 1rem;
 }
 
 .icon {
@@ -47,9 +49,10 @@
   margin-top: 3rem;
   text-align: center;
   color: #959591;
+  font-size: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .flex {
     flex-direction: row;
     justify-content: space-between;

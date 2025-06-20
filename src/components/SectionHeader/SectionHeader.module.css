@@ -7,9 +7,11 @@
 .title {
     color: #1c1b15;
     text-align: center;
+    font-size: 1.1rem;
 }
   
 .description {
-    color: #959591;
+    color: #6b7280;
     text-align: center;
+    font-size: 1.1rem;
 }

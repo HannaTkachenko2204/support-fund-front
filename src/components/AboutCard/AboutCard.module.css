@@ -29,9 +29,11 @@
 .feature_title {
     color: #294d7f;
     margin-top: 2rem;
+    font-size: 1.3rem;
 }
   
 .feature_description {
     margin-top: 1rem;
-    color: #959591;
+    color: #6b7280;
+    font-size: 1.1rem;
 }

@@ -2,7 +2,7 @@ import Container from '../Container/Container';
 import s from './HelpNumbers.module.css';
 
 const statsData = [
-    { iconId: 'icon-wallet', value: '2.1 млн грн', label: 'гривень зібрано' },
+    { iconId: 'icon-wallet', value: '2.1 млн', label: 'гривень зібрано' },
     { iconId: 'icon-group', value: '12 458', label: 'сімей отримали допомогу' },
     { iconId: 'icon-heartbeat', value: '3 742', label: 'реабілітаційних курсів' },
     { iconId: 'icon-graduation-cap', value: '2 156', label: 'освітніх грантів' },
