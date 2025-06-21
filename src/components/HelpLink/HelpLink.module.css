@@ -34,8 +34,21 @@
   background-color: #1a3459;
 }
 
+.link_accent {
+  background: linear-gradient(to right, #294d7f, #feeea8);
+  fill: #294d7f;
+  color: white;
+}
+
+.link_accent:hover  {
+  background: linear-gradient(to left, #294d7f, #feeea8);
+  fill: #feeea8;
+}
+
+
 .icon_dark,
-.icon_light {
+.icon_light,
+.icon_accent {
   width: 28px;
   height: 25px;
 }
