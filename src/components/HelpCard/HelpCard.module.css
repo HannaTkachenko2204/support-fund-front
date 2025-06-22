@@ -1,7 +1,12 @@
+.section {
+ background-color: #e9ecef;
+ padding: 5rem 0;
+}
+
 .list {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1rem;
 }
 
 .item {
@@ -24,7 +29,7 @@
     flex-shrink: 0;
     width: 6rem;
     height: 6rem;
-    border-radius: 9999px;
+    border-radius: 50%;
     background-color: white;
     color: #294d7f;
     display: flex;
@@ -70,7 +75,7 @@
 }
   
 .link:hover {
-    color: #1e40af;
+    color: #1a3459;
 }
   
 .arrow {

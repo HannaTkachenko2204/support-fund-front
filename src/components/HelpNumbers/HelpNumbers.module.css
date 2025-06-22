@@ -1,7 +1,7 @@
 .section {
-    background: linear-gradient(to bottom, #feeea8 0%, #294d7f 20%, #294d7f 80%, #feeea8 100%);
+    background: linear-gradient(to bottom, #feeea8 0%, #294d7f 20%,#294d7f 80%, #feeea8 100%);
     color: white;
-    padding: 6rem 0;
+    padding: 5rem 0;
     text-align: center;
 }
 

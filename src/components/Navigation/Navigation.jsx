@@ -34,7 +34,6 @@ const Navigation = ({ onLinkClick }) => {
             text="Задонатити"
             iconId="icon-heart1"
             variant="accent"
-            isRouterLink={true}
             className={s.router_link}
             onClick={() => {
               scrollToTop(); 

@@ -38,6 +38,7 @@
   background: linear-gradient(to right, #294d7f, #feeea8);
   fill: #294d7f;
   color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .link_accent:hover  {

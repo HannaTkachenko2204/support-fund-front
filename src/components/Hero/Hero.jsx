@@ -1,10 +1,13 @@
+import useScrollToTop from '../../hooks/useScrollToTop';
 import Container from '../Container/Container';
 import Counter from '../Counter/Counter';
 import HelpLink from '../HelpLink/HelpLink';
 
 import s from './Hero.module.css';
 
-const Hero = () => {
+const Hero = ({ onLinkClick }) => {
+  const scrollToTop = useScrollToTop();
+
   return (
     <>
       <section className={s.section}>
@@ -18,16 +21,24 @@ const Hero = () => {
               </p>
               <div className={s.links}>  
                 <HelpLink
-                  href="#get-help"
+                  href="/donate"
                   text="Зробити внесок?"
                   iconId="icon-heart1"
                   variant="dark"
+                  onClick={() => {
+                    scrollToTop(); 
+                    onLinkClick?.();
+                  }}
                 />
                 <HelpLink
-                  href="#donate"
+                  href="/help"
                   text="Потрібна допомога?"
                   iconId="icon-heart-broken"
                   variant="light"
+                  onClick={() => {
+                    scrollToTop(); 
+                    onLinkClick?.();
+                  }}
                 />
               </div>
             </div>
