@@ -48,8 +48,7 @@ const HelpCard = () => {
       <Container>
         <SectionHeader
           subtitle="Програми допомоги"
-          title="Форми підтримки учасників бойових дій"
-          description="Комплексні програми допомоги за всіма критично важливими напрямками"
+          description="Комплексні форми підтримки учасників бойових дій за всіма критично важливими напрямками"
         />
         <div className={s.list}>
           {supportPrograms.map(({ id, icon, title, summary, details }) => (
