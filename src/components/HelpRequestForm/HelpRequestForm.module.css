@@ -111,7 +111,7 @@ input[type="file"] {
   width: 20px;
   height: 20px;
   margin-left: 8px;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 4px;
   background-color: transparent;
   color: white;
@@ -162,7 +162,7 @@ textarea {
   flex-shrink: 0;
   min-width: 20px;
   min-height: 20px;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 4px;
   margin-right: 0.5rem;
   position: relative;
