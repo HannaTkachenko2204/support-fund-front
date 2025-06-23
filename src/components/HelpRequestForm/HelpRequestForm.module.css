@@ -159,6 +159,9 @@ textarea {
   appearance: none;
   width: 20px;
   height: 20px;
+  flex-shrink: 0;
+  min-width: 20px;
+  min-height: 20px;
   border: 2px solid white;
   border-radius: 4px;
   margin-right: 0.5rem;
