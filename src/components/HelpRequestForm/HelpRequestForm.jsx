@@ -1,12 +1,35 @@
+import { useState } from 'react';
+import useHiddenFileInput from '../../hooks/useHiddenFileInput';
 import Container from '../Container/Container';
 import SectionHeader from '../SectionHeader/SectionHeader';
 import s from './HelpRequestForm.module.css';
 
 const HelpRequestForm = () => {
+  const [selectedFiles, setSelectedFiles] = useState([]);
+  const { fileInputRef, openFileDialog, onKeyDown } = useHiddenFileInput();
+
+  const handleFileChange = (e) => {
+    const newFiles = Array.from(e.target.files);
+
+    setSelectedFiles((prevFiles) => {
+      const existingNames = prevFiles.map((f) => f.name);
+      const filteredNewFiles = newFiles.filter(
+        (f) => !existingNames.includes(f.name)
+      );
+      return [...prevFiles, ...filteredNewFiles];
+    });
+
+    e.target.value = null;
+  };
+
+  const handleFileRemove = (index) => {
+    setSelectedFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Здесь можешь добавить отправку данных, валидацию и т.д.
     alert('Форма отправлена!');
+    // Здесь можно отправить selectedFiles на сервер
   };
 
   return (
@@ -30,7 +53,13 @@ const HelpRequestForm = () => {
 
           <div>
             <label htmlFor="dob">Дата народження*</label>
-            <input type="date" id="dob" name="dob" required />
+            <input
+              type="date"
+              id="dob"
+              name="dob"
+              required
+              defaultValue={new Date().toISOString().slice(0, 10)}
+            />
           </div>
 
           <div>
@@ -56,12 +85,23 @@ const HelpRequestForm = () => {
           </div>
 
           <div>
-            <label htmlFor="region">Регіон проживання*</label>
+            <label htmlFor="region">Область*</label>
             <input
               type="text"
               id="region"
               name="region"
-              placeholder="Регіон"
+              placeholder="Область"
+              required
+            />
+          </div>
+
+          <div>
+            <label htmlFor="city">Місто*</label>
+            <input
+              type="text"
+              id="city"
+              name="city"
+              placeholder="Місто"
               required
             />
           </div>
@@ -78,8 +118,64 @@ const HelpRequestForm = () => {
           </div>
 
           <div>
-            <label htmlFor="documents">Документи (необов’язково)</label>
-            <input type="file" id="documents" name="documents" multiple />
+            <label>Документи (посвідчення, медичні довідки та ін.)</label>
+            <div className={s.fileInputWrapper}>
+              <label
+                className={s.fileInputLabel}
+                onClick={openFileDialog}
+                role="button"
+                tabIndex={0}
+                onKeyDown={onKeyDown}
+              >
+                Вибрати файли
+              </label>
+
+              <input
+                type="file"
+                id="documents"
+                name="documents"
+                multiple
+                className={s.fileInput}
+                onChange={handleFileChange}
+                ref={fileInputRef}
+                style={{
+                  position: 'absolute',
+                  opacity: 0,
+                  width: 0,
+                  height: 0,
+                  pointerEvents: 'none',
+                }}
+                tabIndex={-1}
+              />
+            </div>
+
+            {selectedFiles.length > 0 && (
+              <ul className={s.fileList}>
+                {selectedFiles.map((file, index) => (
+                  <li
+                    key={index}
+                    style={{ display: 'flex', alignItems: 'center' }}
+                  >
+                    <span>{file.name}</span>
+                    <button
+                      type="button"
+                      className={s.fileRemoveBtn}
+                      onClick={() => handleFileRemove(index)}
+                      aria-label="Видалити файл"
+                      title="Видалити файл"
+                    >
+                      <svg
+                        className={s.icon}
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <use xlinkHref="/assets/icons/icons.svg#icon-close" />
+                      </svg>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           <div>
@@ -94,9 +190,11 @@ const HelpRequestForm = () => {
             </label>
           </div>
 
-          <button type="submit" className="btn">
+          <div className={s.buttonWrapper}>
+          <button type="submit" className={s.btn}>
             Надіслати заявку
           </button>
+          </div>
         </form>
       </Container>
     </section>

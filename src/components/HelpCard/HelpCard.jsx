@@ -47,7 +47,7 @@ const HelpCard = () => {
     <section className={s.section}>
       <Container>
         <SectionHeader
-          subtitle="Як ми допомагаємо"
+          subtitle="Програми допомоги"
           title="Форми підтримки учасників бойових дій"
           description="Комплексні програми допомоги за всіма критично важливими напрямками"
         />
