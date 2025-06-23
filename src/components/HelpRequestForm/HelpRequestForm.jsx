@@ -118,7 +118,7 @@ const HelpRequestForm = () => {
           </div>
 
           <div>
-            <label>Документи (посвідчення, медичні довідки та ін.)</label>
+            <label>Документи (посвідчення, довідки, медичні висновки)</label>
             <div className={s.fileInputWrapper}>
               <label
                 className={s.fileInputLabel}

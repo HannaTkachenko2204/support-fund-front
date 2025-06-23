@@ -74,6 +74,7 @@ input[type="file"] {
   font-size: 1.1rem;
   transition: background-color 0.3s ease;
   margin: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .fileInputLabel:hover {
@@ -122,6 +123,7 @@ input[type="file"] {
   line-height: 1;
   transition: background-color 0.2s ease, border-color 0.2s ease;
   padding: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .fileRemoveBtn:hover {
@@ -169,6 +171,7 @@ textarea {
   cursor: pointer;
   background-color: transparent;
   transition: background-color 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .checkboxWrapper input[type="checkbox"]:hover {
@@ -209,6 +212,7 @@ button.btn {
   font-size: 1.1rem;
   transition: background-color 0.3s ease;
   width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
   
 button.btn:hover {

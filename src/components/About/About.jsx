@@ -15,7 +15,7 @@ const About = () => {
       if (section) {
         setTimeout(() => {
           section.scrollIntoView({ behavior: 'smooth' });
-        }, 100); // трішки зачекати, щоб DOM встиг змонтуватись
+        }, 100);
       }
     }
   }, [location]);
