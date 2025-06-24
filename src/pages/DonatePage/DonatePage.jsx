@@ -1,5 +1,7 @@
+import Donation from "../../components/Donation/Donation";
+
 const DonatePage = () => {
-    return <>Задонатити</>;
+    return <Donation />
   };
   
   export default DonatePage;

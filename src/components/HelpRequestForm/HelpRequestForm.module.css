@@ -175,7 +175,8 @@ textarea {
 }
 
 .checkboxWrapper input[type="checkbox"]:hover {
-  background-color: #1a3459;
+  background-color: #feeea8;
+  border-color: #feeea8;
 }
 
 .checkboxWrapper input[type="checkbox"]:checked {
@@ -216,6 +217,8 @@ button.btn {
 }
   
 button.btn:hover {
-    background-color: #1a3459;
+    background-color: #feeea8;
+    color: #294d7f;
+    border-color: #feeea8;
 }
   
