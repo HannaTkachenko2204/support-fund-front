@@ -1,7 +1,13 @@
 .section {
-    background: linear-gradient(to bottom, #294d7f 0%, #294d7f 10%, #feeea8 100%);
-    color: white;
-    padding: 5rem 0;
+  background-image: 
+    linear-gradient(rgba(41, 77, 127, 0.5), rgba(41, 77, 127, 0.5)),
+    url('/assets/flag.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  color: white;
+  padding: 5rem 0;
 }
 
 .hero {
@@ -21,12 +27,13 @@
 .title {
     text-transform: uppercase;
     text-align: center;
+    font-size: 2.5rem;
 }
 
 .text {
     margin-bottom: 3rem;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.8rem;
 }
 
 .links {
