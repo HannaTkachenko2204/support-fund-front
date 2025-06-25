@@ -3,18 +3,20 @@ import s from './Donation.module.css';
 import Container from '../Container/Container';
 
 const purposes = [
-  'Медична реабілітація поранених',
-  'Гуманітарна допомога на передовій',
+  'Медична та психологічна реабілітації поранених',
+  'Матеріальна допомога сімʼям військовослужбовців',
   'Підтримка сімей загиблих героїв',
-  'Технічне забезпечення підрозділів',
+  'Освітні програми для дітей та родин',
 ];
 
-const amounts = ['3000 ₴', '5000 ₴', '10000 ₴', '20000 ₴'];
-const frequencies = ['Разово', 'Щомісяця', 'Щокварталу'];
+const payment = ['Карта', 'Криптовалюта']
+const amounts = ['100 грн', '200 грн', '500 грн', '1000 грн'];
+const frequencies = ['Разово', 'Щомісяця'];
 
 const Donation = () => {
   const [activeAmount, setActiveAmount] = useState(null);
   const [activeFrequency, setActiveFrequency] = useState(null);
+  const [activePayment, setActivePayment] = useState('Карта');
   const [customAmount, setCustomAmount] = useState('');
   const [agree, setAgree] = useState(false);
 
@@ -49,14 +51,22 @@ const Donation = () => {
 
             <section className={s.form}>
               <div className={s.formInner}>
-                <h3>Зробити пожертву</h3>
-                <p className={s.subtext}>Оберіть суму внеску та періодичність</p>
+                <h2>Зробити пожертву</h2>
+                <p>Оберіть суму внеску та періодичність</p>
 
                 <div className={s.formGroup}>
                   <label>Спосіб оплати</label>
-                  <div className={s.paymentMethodStatic}>
-                    <svg className={s.iconPayment}><use xlinkHref="/assets/icons/icons.svg#icon-wallet" /></svg>
-                    <span>Криптовалюта через NOWPayments</span>
+                  <div className={s.paymentOptions}>
+                    {payment.map((method, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        className={`${s.paymentBtn} ${activePayment === method ? s.active : ''}`}
+                        onClick={() => setActivePayment(method)}
+                      >
+                        {method}
+                      </button>
+                    ))}
                   </div>
                 </div>
 
@@ -106,7 +116,7 @@ const Donation = () => {
                 </div>
 
                 <div className={s.formSubmit}>
-                  <button type="button" className="btn" disabled={!agree}>Підтвердити пожертву</button>
+                  <button type="button" disabled={!agree}>Підтвердити пожертву</button>
                 </div>
 
                 <div className={s.formAgreement}>
