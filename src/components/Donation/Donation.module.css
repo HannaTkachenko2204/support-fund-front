@@ -172,16 +172,13 @@
   cursor: pointer;
   font-weight: 500;
   font-size: 1.1rem;
-  border-color: transparent;
   background-color: #294d7f;
   color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .formSubmit button:hover  {
-  background-color: #feeea8;
-  border-color: #294d7f;
-  color: #1c1b15;
+  background-color: #1a3459;
 }
 
   
@@ -222,13 +219,14 @@ input[type="checkbox"] {
 }
   
 input[type="checkbox"]:hover {
-    background-color: #feeea8;
+    background-color: #294d7f;
     border-color: #294d7f;
 }
   
 input[type="checkbox"]:checked {
     background-color: #1a3459;
     border-color: white;
+    border-color: #1a3459;
 }
   
 input[type="checkbox"]:checked::after {
