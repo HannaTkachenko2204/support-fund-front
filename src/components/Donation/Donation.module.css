@@ -89,7 +89,7 @@
     background-color: #fff;
     padding: 3rem;
     flex: 1;
-    color: #1c1b15;
+    color: #294d7f;
 }
 
 .formInner h2 {
@@ -134,6 +134,7 @@
     border-radius: 0.375rem;
     font-weight: 500;
     cursor: pointer;
+    color: #294d7f;
 }
   
 .amountBtn.active,
