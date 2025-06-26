@@ -1,21 +1,21 @@
 import React, { useState, useRef } from 'react';
 import Container from '../Container/Container';
-import Logo from '../Logo/Logo';
-import Navigation from '../Navigation/Navigation';
-import useOutsideClick from '../../hooks/useOutsideClick';
-import useIsMobile from '../../hooks/useIsMobile';
-
+import Logo from './Logo/Logo';
+import Navigation from './Navigation/Navigation';
+import useOutsideClick from './../../hooks/useOutsideClick';
+import useIsMobile from './../../hooks/useIsMobile';
 import s from './Header.module.css';
 
-const Header = () => {
-  const isMobile = useIsMobile(900);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const menuRef = useRef(null);
 
+const Header = () => {
+  const isMobile = useIsMobile(900); // повертає true, якщо ширина вікна ≤ 900px
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // зберігає, чи відкрито мобільне меню
+  
+  const menuRef = useRef(null); // коли відкрито меню — при кліку поза ним воно закривається
   useOutsideClick(menuRef, () => setIsMobileMenuOpen(false), isMobileMenuOpen);
 
   const toggleMenu = () => {
-    setIsMobileMenuOpen((prev) => !prev);
+    setIsMobileMenuOpen((prev) => !prev); // тоглиться відкрито/закрито мобільне меню
   };
 
   return (
@@ -23,6 +23,7 @@ const Header = () => {
       <Container>
         <div className={s.inner}>
           <Logo />
+          {/* при десктопі Navigation, при мобільному - кнопка-бургер */}
           {!isMobile && <Navigation />}
           <div className={s.actions}>
             {isMobile && (
@@ -48,6 +49,7 @@ const Header = () => {
             </svg>
           </div>
         </div>
+        {/* мобільне меню (умовне рендерення) */}
         {isMobile && isMobileMenuOpen && (
           <div className={s.mobileMenu} ref={menuRef}>
             <Navigation onLinkClick={toggleMenu} />

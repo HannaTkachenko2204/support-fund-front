@@ -1,5 +1,5 @@
-import GatHelp from "../../components/GatHelp/GatHelp"
-import StoriesList from "../../components/StoriesList/StoriesList";
+import GatHelp from "../../components/StoriesPage/GatHelp/GatHelp"
+import StoriesList from "../../components/StoriesPage/StoriesList/StoriesList";
 
 const StoriesPage = () => {
   return (

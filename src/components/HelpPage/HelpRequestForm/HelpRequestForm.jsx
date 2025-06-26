@@ -1,13 +1,18 @@
 import { useState } from 'react';
-import useHiddenFileInput from '../../hooks/useHiddenFileInput';
-import Container from '../Container/Container';
-import SectionHeader from '../SectionHeader/SectionHeader';
+import useHiddenFileInput from '../../../hooks/useHiddenFileInput';
+import Container from '../../Container/Container';
+import SectionHeader from '../../SectionHeader/SectionHeader';
 import s from './HelpRequestForm.module.css';
 
 const HelpRequestForm = () => {
-  const [selectedFiles, setSelectedFiles] = useState([]);
-  const { fileInputRef, openFileDialog, onKeyDown } = useHiddenFileInput();
+  const [selectedFiles, setSelectedFiles] = useState([]); // масив вибраних файлів користувача
+  const { fileInputRef, openFileDialog, onKeyDown } = useHiddenFileInput(); // дозволяє відкрити приховане вхідне поле для завантаження файлів
 
+// Обробка додавання файлів:
+// - конвертує отримані файли у масив;
+// - фільтрує файли, які вже додані, щоб не було дублікатів;
+// - додає у стан нові файли;
+// - очищає значення інпуту, щоб можна було вибрати той самий файл ще раз (якщо треба).
   const handleFileChange = (e) => {
     const newFiles = Array.from(e.target.files);
 
@@ -19,17 +24,18 @@ const HelpRequestForm = () => {
       return [...prevFiles, ...filteredNewFiles];
     });
 
-    e.target.value = null;
+    e.target.value = null; // щоб можна було вибрати той самий файл знову
   };
 
+// видаляє файл із масиву за індексом
   const handleFileRemove = (index) => {
     setSelectedFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // при відправці форми забороняє перезавантаження сторінки.
     alert('Форма отправлена!');
-    // Здесь можно отправить selectedFiles на сервер
+    // тут можно відправити selectedFiles на сервер
   };
 
   return (

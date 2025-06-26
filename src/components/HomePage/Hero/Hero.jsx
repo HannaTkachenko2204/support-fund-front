@@ -1,7 +1,7 @@
-import useScrollToTop from '../../hooks/useScrollToTop';
-import Container from '../Container/Container';
+import useScrollToTop from '../../../hooks/useScrollToTop';
+import Container from '../../Container/Container';
 import Counter from '../Counter/Counter';
-import HelpLink from '../HelpLink/HelpLink';
+import HelpLink from '../../HelpLink/HelpLink';
 
 import s from './Hero.module.css';
 

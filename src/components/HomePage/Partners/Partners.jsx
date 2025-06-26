@@ -1,6 +1,6 @@
-import Container from "../Container/Container"
+import Container from "../../Container/Container"
 import PartnersCard from '../PartnersCard/PartnersCard';
-import SectionHeader from "../SectionHeader/SectionHeader"
+import SectionHeader from "../../SectionHeader/SectionHeader"
 import s from './Partners.module.css'
 
 const partners = [

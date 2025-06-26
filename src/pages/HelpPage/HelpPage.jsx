@@ -1,6 +1,6 @@
-import HelpCard from '../../components/HelpCard/HelpCard';
-import HelpStep from '../../components/HelpStep/HelpStep';
-import HelpRequestForm from '../../components/HelpRequestForm/HelpRequestForm';
+import HelpCard from '../../components/HelpPage/HelpCard/HelpCard';
+import HelpStep from '../../components/HelpPage/HelpStep/HelpStep';
+import HelpRequestForm from '../../components/HelpPage/HelpRequestForm/HelpRequestForm';
 
 const HelpPage = () => {
   return (

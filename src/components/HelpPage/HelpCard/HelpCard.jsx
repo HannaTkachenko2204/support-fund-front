@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import SectionHeader from '../../SectionHeader/SectionHeader';
+import Container from '../../Container/Container';
+import HelpCardItem from '../HelpCardItem/HelpCardItem';
 import s from './HelpCard.module.css';
-import SectionHeader from '../SectionHeader/SectionHeader';
-import Container from '../Container/Container';
+
 
 const supportPrograms = [
   {
@@ -52,7 +53,7 @@ const HelpCard = () => {
         />
         <div className={s.list}>
           {supportPrograms.map(({ id, icon, title, summary, details }) => (
-            <CardItem
+            <HelpCardItem
               key={id}
               icon={icon}
               title={title}
@@ -63,45 +64,6 @@ const HelpCard = () => {
         </div>
       </Container>
     </section>
-  );
-};
-
-const CardItem = ({ icon, title, summary, details }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleDetails = () => setIsOpen(!isOpen);
-
-  return (
-    <article className={s.item}>
-      <div className={s.wrapper}>
-        <svg className={s.icon}>
-          <use xlinkHref={`/assets/icons/icons.svg#${icon}`} />
-        </svg>
-      </div>
-
-      <div className={s.content}>
-        <h4>{title}</h4>
-        <p>{summary}</p>
-        <a className={s.link} onClick={toggleDetails}>
-          Детальніше
-          <svg
-            className={s.arrow}
-            style={{
-              transform: isOpen ? 'rotate(180deg)' : 'rotate(0)',
-            }}
-          >
-            <use xlinkHref="/assets/icons/icons.svg#icon-keyboard_arrow_down" />
-          </svg>
-        </a>
-        <div
-          className={s.toggleContent}
-          style={{
-            maxHeight: isOpen ? '500px' : '0',
-          }}
-        >
-          <p>{details}</p>
-        </div>
-      </div>
-    </article>
   );
 };
 

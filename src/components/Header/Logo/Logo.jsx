@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
+import useScrollToTop from '../../../hooks/useScrollToTop';
 import s from './Logo.module.css';
-import useScrollToTop from '../../hooks/useScrollToTop';
 
 const Logo = () => {
   const scrollToTop = useScrollToTop();

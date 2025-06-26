@@ -1,4 +1,4 @@
-import Donation from "../../components/Donation/Donation";
+import Donation from "../../components/DonatePage/Donation/Donation";
 
 const DonatePage = () => {
     return <Donation />

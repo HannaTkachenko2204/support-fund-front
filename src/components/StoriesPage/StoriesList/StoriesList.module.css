@@ -1,0 +1,19 @@
+.section {
+    background-color: #e9ecef;
+    padding: 5rem 0;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    align-items: flex-start;
+    margin-top: 4rem;
+}
+  
+@media (min-width: 1024px) {
+    .list {
+      gap: 2rem;
+    }
+}

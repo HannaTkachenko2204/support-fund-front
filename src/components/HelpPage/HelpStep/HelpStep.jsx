@@ -1,4 +1,4 @@
-import Container from '../Container/Container';
+import Container from '../../Container/Container';
 import s from './HelpStep.module.css';
 
 const steps = [
@@ -37,12 +37,6 @@ const HelpStep = () => {
             </article>
           ))}
         </div>
-
-        {/* <div className={s.flex}>
-          <button type="button" className={s.btn}>
-            Оформити заявку на допомогу
-          </button>
-        </div> */}
     </Container>
     </section>
   );

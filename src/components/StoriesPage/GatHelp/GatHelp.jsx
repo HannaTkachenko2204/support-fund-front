@@ -1,6 +1,6 @@
-import useScrollToTop from '../../hooks/useScrollToTop';
-import Container from '../Container/Container';
-import HelpLink from '../HelpLink/HelpLink';
+import useScrollToTop from '../../../hooks/useScrollToTop';
+import Container from '../../Container/Container';
+import HelpLink from '../../HelpLink/HelpLink';
 import s from './GatHelp.module.css';
 
 const GatHelp = ({ onLinkClick }) => {

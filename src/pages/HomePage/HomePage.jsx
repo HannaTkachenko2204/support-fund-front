@@ -1,7 +1,7 @@
-import Hero from '../../components/Hero/Hero';
-import About from '../../components/About/About';
-import HelpNumbers from '../../components/HelpNumbers/HelpNumbers';
-import Partners from '../../components/Partners/Partners';
+import Hero from '../../components/HomePage/Hero/Hero';
+import About from '../../components/HomePage/About/About';
+import HelpNumbers from '../../components/HomePage/HelpNumbers/HelpNumbers';
+import Partners from '../../components/HomePage/Partners/Partners';
 
 const HomePage = () => {
   return (

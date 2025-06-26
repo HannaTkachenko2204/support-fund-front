@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
+import useScrollToTop from '../../../hooks/useScrollToTop';
+import HelpLink from '../../HelpLink/HelpLink';
 import s from './Navigation.module.css';
-import useScrollToTop from '../../hooks/useScrollToTop';
-import HelpLink from '../HelpLink/HelpLink';
 
 const Navigation = ({ onLinkClick }) => {
   const scrollToTop = useScrollToTop();

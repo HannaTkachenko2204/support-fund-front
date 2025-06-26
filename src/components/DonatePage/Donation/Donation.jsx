@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import Container from '../../Container/Container';
 import s from './Donation.module.css';
-import Container from '../Container/Container';
 
 const purposes = [
   'Медична та психологічна реабілітації поранених',
