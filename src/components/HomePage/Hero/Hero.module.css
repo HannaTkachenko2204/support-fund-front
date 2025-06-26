@@ -1,11 +1,13 @@
 .section {
+  background-color: #294d7f; /* базовий фон */
   background-image: 
-    linear-gradient(rgba(41, 77, 127, 0.5), rgba(41, 77, 127, 0.5)),
-    url('/assets/flag.jpg');
+    linear-gradient(rgba(41, 77, 127, 0.2), rgba(41, 77, 127, 0.2)),
+    url('/assets/flag.jpg'),
+    linear-gradient(to bottom, #294d7f 0%, #294d7f 10%, #feeea8 100%);
+  background-blend-mode: normal, multiply;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-blend-mode: multiply;
   color: white;
   padding: 5rem 0;
 }

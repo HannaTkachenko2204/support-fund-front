@@ -1,0 +1,62 @@
+.section {
+    background-color: #e9ecef;
+    padding: 5rem 3rem;
+    color: #1c1b15;
+}
+
+.wrapper {
+    max-width: 400px;
+    margin: auto;
+}
+
+.wrapper h2 {
+    color: #294d7f;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.googleBtn {
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    border: 1px solid #294d7f;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1.1rem;
+    background-color: #e9ecef;
+    color: #1c1b15;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.googleBtn:hover  {
+    background-color: #fff;
+}
+  
+  .forgotText {
+    margin-top: 10px;
+  }
+  
+  .forgotLink {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+    display: inline-block;
+  }
+  
+  .forgotLink:hover {
+    color: #0056b3;
+  }
+  
+  .signupText {
+    margin-top: 20px;
+  }
+  
+  .signupLink {
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  

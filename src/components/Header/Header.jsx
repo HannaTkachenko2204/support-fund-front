@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Container from '../Container/Container';
 import Logo from './Logo/Logo';
 import Navigation from './Navigation/Navigation';
@@ -44,9 +45,11 @@ const Header = () => {
                 </svg>
               </button>
             )}
+            <Link to="/signin" className={s.svgLink}>
             <svg className={s.svg}>
               <use xlinkHref="/assets/icons/icons.svg#icon-user-circle-o"></use>
             </svg>
+            </Link>
           </div>
         </div>
         {/* мобільне меню (умовне рендерення) */}

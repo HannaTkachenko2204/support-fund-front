@@ -6,6 +6,8 @@ import DonatePage from '../../pages/DonatePage/DonatePage';
 import HelpPage from '../../pages/HelpPage/HelpPage';
 import HomePage from '../../pages/HomePage/HomePage';
 import './App.module.css';
+import SignInPage from '../../pages/SignInPage/SignInPage';
+import SignUpPage from '../../pages/SignUpPage/SignUpPage';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/help" element={<HelpPage />} />
           <Route path="/donate" element={<DonatePage />} />
           <Route path="/stories" element={<StoriesPage />} />
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
         </Routes>
       </main>
       <Footer />
