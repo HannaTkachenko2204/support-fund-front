@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SignInForm from '../../components/Auth/SignInForm/SignInForm';
 import Modal from '../../components/Modal/Modal'; // створимо компонент модального вікна
-import s from './SignInPage.module.css'; // стилі
+import Container from '../../components/Container/Container';
+import useScrollToTop from '../../hooks/useScrollToTop';
+import s from './SignInPage.module.css';
 
 const SignInPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,49 +27,60 @@ const SignInPage = () => {
     setIsModalOpen(false);
   };
 
+  const scrollToTop = useScrollToTop();
+
   return (
     <section className={s.section}>
-    <div className={s.wrapper}>
-      <h2>Увійти</h2>
-      <SignInForm onSubmit={handleSignIn} />
+      <Container>
+        <div className={s.wrapper}>
+          <h2>Увійти</h2>
+          <SignInForm onSubmit={handleSignIn} />
 
-<div className={s.flex}>
-      <p>or</p>
+          <div className={s.flex}>
+            <p className={s.text}>or</p>
 
-      <button className={s.googleBtn} onClick={handleGoogleSignIn}>
-        Увійти через Google
-      </button>
+            <button className={s.googleBtn} onClick={handleGoogleSignIn}>
+              Авторизуватися за допомого Google
+            </button>
 
-      <p className={s.forgotText} onClick={() => setIsModalOpen(true)}>
-        <span className={s.forgotLink}>Забули пароль?</span>
-      </p>
+            <p className={s.forgotText} onClick={() => setIsModalOpen(true)}>
+              <span className={s.forgotLink}>Забули пароль?</span>
+            </p>
 
-      <p className={s.signupText}>
-        Не маєте акаунта?{' '}
-        <Link to="/signup" className={s.signupLink}>
-          Зареєструватися
-        </Link>
-      </p>
-      </div>
+            <p className={s.signupText}>
+              Не маєте акаунта?{' '}
+              <Link
+                to="/signup"
+                className={s.signupLink}
+                onClick={() => {
+                  scrollToTop();
+                }}
+              >
+                Зареєструватися
+              </Link>
+            </p>
+          </div>
 
-      {isModalOpen && (
-        <Modal onClose={() => setIsModalOpen(false)}>
-          <h3>Відновлення паролю</h3>
-          <form onSubmit={handleRecoverPassword}>
-            <label>
-              Введіть свій email:
-              <input
-                type="email"
-                value={recoveryEmail}
-                onChange={(e) => setRecoveryEmail(e.target.value)}
-                required
-              />
-            </label>
-            <button type="submit">Надіслати email</button>
-          </form>
-        </Modal>
-      )}
-    </div>
+          {isModalOpen && (
+            <Modal onClose={() => setIsModalOpen(false)}>
+              <h2>Відновлення паролю</h2>
+              <form onSubmit={handleRecoverPassword} className={s.wrapper}>
+                <label>Введіть свій email:</label>
+                  <input
+                    type="email"
+                    value={recoveryEmail}
+                    onChange={(e) => setRecoveryEmail(e.target.value)}
+                    required
+                    placeholder='Введіть вашу електронну пошту'
+                  />
+                <div className={s.flex}>
+                <button type="submit" className={s.btn}>Надіслати email</button>
+                </div>
+              </form>
+            </Modal>
+          )}
+        </div>
+      </Container>
     </section>
   );
 };

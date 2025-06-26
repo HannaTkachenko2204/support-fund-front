@@ -1,5 +1,5 @@
 .section {
-    padding: 1rem 0;
+    padding: 3rem 0;
     background-color: #e9ecef;
     color: #fff;
 }
@@ -28,6 +28,12 @@
     flex: 1;
 }
   
+@media (max-width: 485px) {
+    .info {
+        padding: 3rem 2rem;
+    } 
+}
+
 .info h2 {
     font-size: 2rem;
     font-weight: 800;
@@ -90,6 +96,12 @@
     padding: 3rem;
     flex: 1;
     color: #294d7f;
+}
+
+@media (max-width: 485px) {
+    .form {
+        padding: 3rem 2rem;
+    } 
 }
 
 .formInner h2 {

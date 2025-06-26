@@ -1,7 +1,11 @@
-import Donation from "../../components/DonatePage/Donation/Donation";
+import DonationInfo from "../../components/DonatePage/DonationInfo/DonationInfo";
+import DonationPay from "../../components/DonatePage/DonationPay/DonationPay";
 
 const DonatePage = () => {
-    return <Donation />
+    return <>
+    <DonationInfo />
+    <DonationPay />
+    </>
   };
   
   export default DonatePage;

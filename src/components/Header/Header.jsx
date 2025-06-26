@@ -6,6 +6,7 @@ import Navigation from './Navigation/Navigation';
 import useOutsideClick from './../../hooks/useOutsideClick';
 import useIsMobile from './../../hooks/useIsMobile';
 import s from './Header.module.css';
+import useScrollToTop from '../../hooks/useScrollToTop';
 
 
 const Header = () => {
@@ -18,6 +19,8 @@ const Header = () => {
   const toggleMenu = () => {
     setIsMobileMenuOpen((prev) => !prev); // тоглиться відкрито/закрито мобільне меню
   };
+
+  const scrollToTop = useScrollToTop();
 
   return (
     <header className={s.header}>
@@ -45,7 +48,9 @@ const Header = () => {
                 </svg>
               </button>
             )}
-            <Link to="/signin" className={s.svgLink}>
+            <Link to="/signin" className={s.svgLink} onClick={() => {
+              scrollToTop();
+            }}>
             <svg className={s.svg}>
               <use xlinkHref="/assets/icons/icons.svg#icon-user-circle-o"></use>
             </svg>

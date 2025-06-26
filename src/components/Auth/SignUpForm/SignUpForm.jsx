@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import s from './SignUpForm.module.css'
 
 const SignUpForm = ({ onSubmit }) => {
   const [email, setEmail] = useState('');
@@ -18,34 +19,39 @@ const SignUpForm = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label>Email:</label><br />
+      <div className={s.wrapper}>
+        <label>Email:</label>
         <input
           type="email"
           value={email}
           onChange={e => setEmail(e.target.value)}
           required
+          placeholder='Введіть вашу електронну пошту'
         />
       </div>
-      <div>
-        <label>Пароль:</label><br />
+      <div className={s.wrapper}>
+        <label>Пароль:</label>
         <input
           type="password"
           value={password}
           onChange={e => setPassword(e.target.value)}
           required
+          placeholder='Введіть пароль'
         />
       </div>
-      <div>
-        <label>Підтвердження пароля:</label><br />
+      <div className={s.wrapper}>
+        <label>Підтвердження пароля:</label>
         <input
           type="password"
           value={confirmPassword}
           onChange={e => setConfirmPassword(e.target.value)}
           required
+          placeholder='Повторіть пароль'
         />
       </div>
-      <button type="submit">Зареєструватися</button>
+      <div className={s.flex}>
+      <button type="submit" className={s.btn}>Зареєструватися</button>
+      </div>
     </form>
   );
 };

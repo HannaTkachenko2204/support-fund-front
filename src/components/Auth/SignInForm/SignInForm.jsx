@@ -19,6 +19,7 @@ const SignInForm = ({ onSubmit }) => {
           value={email}
           onChange={e => setEmail(e.target.value)}
           required
+          placeholder='Введіть вашу електронну пошту'
         />
       </div>
       <div className={s.wrapper}>
@@ -28,6 +29,7 @@ const SignInForm = ({ onSubmit }) => {
           value={password}
           onChange={e => setPassword(e.target.value)}
           required
+          placeholder='Введіть ваш пароль'
         />
       </div>
       <div className={s.flex}>
