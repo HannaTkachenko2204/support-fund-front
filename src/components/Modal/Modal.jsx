@@ -1,7 +1,18 @@
+import { useEffect } from 'react';
 import Container from '../Container/Container';
 import s from './Modal.module.css';
 
 const Modal = ({ onClose, children }) => {
+    useEffect(() => {
+        // Блокуємо скрол під модалкою
+        document.body.style.overflow = 'hidden';
+    
+        // Повертаємо скрол, коли модалка закривається
+        return () => {
+          document.body.style.overflow = '';
+        };
+      }, []);
+
   return (
     <Container>
     <div className={s.overlay} onClick={onClose}>
@@ -16,4 +27,4 @@ const Modal = ({ onClose, children }) => {
   );
 };
 
-export default Modal;
+export default Modal
