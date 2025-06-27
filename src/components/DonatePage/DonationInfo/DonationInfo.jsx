@@ -1,4 +1,5 @@
 import Container from '../../Container/Container';
+import DonationPay from '../DonationPay/DonationPay';
 import s from './DonationInfo.module.css';
 
 const purposes = [
@@ -37,6 +38,7 @@ const DonationInfo = () => {
                 </ul>
               </div>
             </aside>
+            <DonationPay />
           </div>
         </div>
       </Container>
