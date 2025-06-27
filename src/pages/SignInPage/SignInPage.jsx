@@ -37,7 +37,7 @@ const SignInPage = () => {
           <SignInForm onSubmit={handleSignIn} />
 
           <div className={s.flex}>
-            <p className={s.text}>or</p>
+            <p className={s.text}>або</p>
 
             <button className={s.googleBtn} onClick={handleGoogleSignIn}>
               Авторизуватися за допомого Google
