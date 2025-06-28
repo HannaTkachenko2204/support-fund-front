@@ -7,4 +7,5 @@ export interface SignUpFormData {
 
 export interface SignUpFormProps {
   onSubmit: (data: SignUpFormData) => void;
+  onSuccess?: () => void;
 }

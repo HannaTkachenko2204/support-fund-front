@@ -1,18 +1,30 @@
 import { FC, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SignInForm from '../../components/Auth/SignInForm/SignInForm';
 import Modal from '../../components/Modal/Modal'; // створимо компонент модального вікна
 import Container from '../../components/Container/Container';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import s from './SignInPage.module.css';
 import { SignInFormData, SignInPageProps } from './SignInPageTypes';
+import { useAppDispatch } from '../../redux/hooks';
+import { signIn } from '../../redux/slices/userSlice';
+import { useAppSelector } from '../../redux/hooks';
 
 const SignInPage: FC<SignInPageProps> = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [recoveryEmail, setRecoveryEmail] = useState('');
 
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
+  const name = useAppSelector(state => state.user.name) || localStorage.getItem('userName');
+
   const handleSignIn = (data: SignInFormData) => {
     console.log('Sign In Data:', data);
+    dispatch(signIn({ email: data.email }));
+    localStorage.setItem('userName', `${name}`);
+    alert(`Ласкаво просимо, ${name || 'користувачу'}!`);
+    navigate('/profile');
     // TODO: виклик API авторизації
   };
 
@@ -24,6 +36,7 @@ const SignInPage: FC<SignInPageProps> = () => {
   const handleRecoverPassword = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Send recovery email to:', recoveryEmail);
+    alert(`Пароль надіслано!`);
     // TODO: виклик API на відновлення пароля
     setIsModalOpen(false);
   };
