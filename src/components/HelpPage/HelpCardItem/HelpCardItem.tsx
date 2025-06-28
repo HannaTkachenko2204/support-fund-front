@@ -41,4 +41,4 @@ const HelpCardItem: FC<HelpCardItemProps> = ({ icon, title, summary, details }) 
     );
   };
 
-  export default HelpCardItem
+  export default HelpCardItem;

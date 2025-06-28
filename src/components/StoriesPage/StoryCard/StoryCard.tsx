@@ -40,4 +40,4 @@ const StoryCard = ({ name, age, photo, preview, full }: StoryCardProps) => {
     );
   };
 
-  export default StoryCard
+  export default StoryCard;

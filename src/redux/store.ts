@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './rootReducer';
-// import donationsReducer from './slices/donationsSlice';
 import {
   persistStore,
   persistReducer,
