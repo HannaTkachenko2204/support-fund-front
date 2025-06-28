@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import userReducer from './slices/userSlice';
+import rootReducer from './rootReducer';
 // import donationsReducer from './slices/donationsSlice';
 import {
   persistStore,
@@ -16,16 +16,13 @@ import storage from 'redux-persist/lib/storage'; // localStorage
 const persistConfig = {
   key: 'user', // ключ в localStorage
   storage,
-  whitelist: ['email', 'name'],
+  whitelist: ['user'],
 };
 
-const persistedUserReducer = persistReducer(persistConfig, userReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: {
-    user: persistedUserReducer,
-    // donations: donationsReducer,
-  },
+    reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

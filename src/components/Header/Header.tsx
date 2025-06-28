@@ -8,6 +8,7 @@ import useIsMobile from '../../hooks/useIsMobile';
 import s from './Header.module.css';
 import useScrollToTop from '../../hooks/useScrollToTop';
 import { HeaderProps } from './HeaderTypes';
+import { useAppSelector } from '../../redux/hooks';
 
 const Header: React.FC<HeaderProps> = () => {
   const isMobile = useIsMobile(900); // повертає true, якщо ширина вікна ≤ 900px
@@ -21,6 +22,11 @@ const Header: React.FC<HeaderProps> = () => {
   };
 
   const scrollToTop = useScrollToTop();
+
+  const userName =
+    useAppSelector((state) => state.user.name) ||
+    localStorage.getItem('userName');
+  const isLoggedIn = !!userName;
 
   return (
     <header className={s.header}>
@@ -48,13 +54,22 @@ const Header: React.FC<HeaderProps> = () => {
                 </svg>
               </button>
             )}
-            <Link to="/signin" className={s.svgLink} onClick={() => {
-              scrollToTop();
-            }}>
-            <svg className={s.svg}>
-              <use xlinkHref="/assets/icons/icons.svg#icon-user-circle-o"></use>
-            </svg>
-            </Link>
+            {isLoggedIn ? (
+              <Link
+                to="/profile"
+                onClick={scrollToTop}
+              >
+                <div className={s.avatar}>
+                  {userName?.charAt(0).toUpperCase()}
+                </div>
+              </Link>
+            ) : (
+              <Link to="/signin" onClick={scrollToTop}>
+                <svg className={s.svg}>
+                  <use xlinkHref="/assets/icons/icons.svg#icon-user-circle-o" />
+                </svg>
+              </Link>
+            )}
           </div>
         </div>
         {/* мобільне меню (умовне рендерення) */}
