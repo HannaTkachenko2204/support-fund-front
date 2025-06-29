@@ -5,6 +5,7 @@ import { signOut } from '../../redux/slices/userSlice';
 import Container from '../../components/Container/Container';
 import s from './ProfilePage.module.css';
 import { ProfilePageProps } from './ProfilePageTypes';
+import { fetchWithRefresh } from '../../utils/api';
 
 const ProfilePage: FC<ProfilePageProps> = () => {
     const dispatch = useAppDispatch();
@@ -14,7 +15,7 @@ const ProfilePage: FC<ProfilePageProps> = () => {
 
     const handleLogout = async () => {
       try {
-        await fetch('http://localhost:5000/api/auth/logout', {
+        await fetchWithRefresh('http://localhost:5000/api/auth/logout', {
           method: 'POST',
           credentials: 'include',
         });

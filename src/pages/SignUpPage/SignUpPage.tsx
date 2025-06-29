@@ -8,7 +8,6 @@ import { SignUpFormData, SignUpPageProps } from './SignUpPageTypes';
 import { useAppDispatch } from '../../redux/hooks';
 import { signIn } from '../../redux/slices/userSlice';
 
-
 const SignUpPage: FC<SignUpPageProps> = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
