@@ -19,14 +19,38 @@ const SignInPage: FC<SignInPageProps> = () => {
 
   const name = useAppSelector(state => state.user.name) || localStorage.getItem('userName');
 
-  const handleSignIn = (data: SignInFormData) => {
-    console.log('Sign In Data:', data);
-    dispatch(signIn({ email: data.email }));
-    localStorage.setItem('userName', `${name}`);
-    alert(`Ласкаво просимо, ${name || 'користувачу'}!`);
-    navigate('/profile');
-    // TODO: виклик API авторизації
-  };
+  const handleSignIn = async (data: SignInFormData) => {
+    try {
+      const response = await fetch('http://localhost:5000/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password,
+        }),
+      });
+  
+      if (!response.ok) {
+        const errorData = await response.json();
+        alert(errorData.message || 'Помилка при логіні');
+        return;
+      }
+  
+      const result = await response.json();
+  
+      // Зберігаємо токен і ім'я користувача у localStorage
+      localStorage.setItem('token', result.token);
+      localStorage.setItem('userName', result.user.name);
+  
+      dispatch(signIn({ email: result.user.email, name: result.user.name }));
+  
+      alert(`Ласкаво просимо, ${result.user.name}!`);
+      navigate('/profile');
+    } catch (error) {
+      alert('Помилка мережі, спробуйте пізніше');
+      console.error('Login error:', error);
+    }
+  };  
 
   const handleGoogleSignIn = () => {
     console.log('Google Sign In');

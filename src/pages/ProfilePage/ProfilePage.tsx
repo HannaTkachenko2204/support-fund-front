@@ -16,6 +16,7 @@ const ProfilePage: FC<ProfilePageProps> = () => {
     const handleLogout = () => {
       dispatch(signOut());
       localStorage.removeItem('userName');
+      localStorage.removeItem('token');
       navigate('/signin');
     };
   

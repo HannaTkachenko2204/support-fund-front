@@ -13,13 +13,38 @@ const SignUpPage: FC<SignUpPageProps> = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const handleSignUp = (data: SignUpFormData) => {
-    console.log('Sign Up Data:', data);
-    dispatch(signIn({ email: data.email, name: data.name }));
-    localStorage.setItem('userName', data.name);
-    alert(`Ласкаво просимо, ${data.name || 'користувачу'}!`);
-    navigate('/profile');
-    // викликати API /signup
+  const handleSignUp = async (data: SignUpFormData) => {
+    try {
+      const response = await fetch('http://localhost:5000/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+  
+      const result = await response.json();
+  
+      if (!response.ok) {
+        alert(result.message || 'Помилка при реєстрації');
+        return;
+      }
+  
+      // Якщо успішно:
+      console.log('Registered:', result);
+      const { user, token } = result;
+  
+      // Збереження у localStorage
+      localStorage.setItem('token', token);
+      localStorage.setItem('userName', user.name);
+  
+      dispatch(signIn({ email: user.email, name: user.name }));
+      alert(`Ласкаво просимо, ${user.name || 'користувачу'}!`);
+      navigate('/profile');
+    } catch (error) {
+      alert('Сталася помилка під час запиту на сервер');
+      console.error(error);
+    }
   };
 
   const handleGoogleSignIn = () => {
