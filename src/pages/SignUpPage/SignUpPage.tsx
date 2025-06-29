@@ -20,6 +20,7 @@ const SignUpPage: FC<SignUpPageProps> = () => {
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include',
         body: JSON.stringify(data),
       });
   
@@ -32,13 +33,9 @@ const SignUpPage: FC<SignUpPageProps> = () => {
   
       // Якщо успішно:
       console.log('Registered:', result);
-      const { user, token } = result;
+      const { user, accessToken } = result;
   
-      // Збереження у localStorage
-      localStorage.setItem('token', token);
-      localStorage.setItem('userName', user.name);
-  
-      dispatch(signIn({ email: user.email, name: user.name }));
+      dispatch(signIn({ email: user.email, name: user.name, token: accessToken }));
       alert(`Ласкаво просимо, ${user.name || 'користувачу'}!`);
       navigate('/profile');
     } catch (error) {

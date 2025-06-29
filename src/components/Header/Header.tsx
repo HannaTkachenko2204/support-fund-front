@@ -24,8 +24,7 @@ const Header: React.FC<HeaderProps> = () => {
   const scrollToTop = useScrollToTop();
 
   const userName =
-    useAppSelector((state) => state.user.name) ||
-    localStorage.getItem('userName');
+    useAppSelector((state) => state.user.name);
   const isLoggedIn = !!userName;
 
   return (

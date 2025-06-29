@@ -10,14 +10,19 @@ const ProfilePage: FC<ProfilePageProps> = () => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
   
-    const { email } = useAppSelector(state => state.user);
-    const name = localStorage.getItem('userName');
+    const { email, name } = useAppSelector((state) => state.user);
 
-    const handleLogout = () => {
-      dispatch(signOut());
-      localStorage.removeItem('userName');
-      localStorage.removeItem('token');
-      navigate('/signin');
+    const handleLogout = async () => {
+      try {
+        await fetch('http://localhost:5000/api/auth/logout', {
+          method: 'POST',
+          credentials: 'include',
+        });
+        dispatch(signOut());
+        navigate('/signin');
+      } catch (error) {
+        console.error('Logout error:', error);
+      }
     };
   
     return (

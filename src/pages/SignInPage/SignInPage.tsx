@@ -17,13 +17,14 @@ const SignInPage: FC<SignInPageProps> = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  const name = useAppSelector(state => state.user.name) || localStorage.getItem('userName');
+  const name = useAppSelector(state => state.user.name);
 
   const handleSignIn = async (data: SignInFormData) => {
     try {
       const response = await fetch('http://localhost:5000/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
         body: JSON.stringify({
           email: data.email,
           password: data.password,
@@ -37,12 +38,9 @@ const SignInPage: FC<SignInPageProps> = () => {
       }
   
       const result = await response.json();
+      const { user, accessToken } = result;
   
-      // Зберігаємо токен і ім'я користувача у localStorage
-      localStorage.setItem('token', result.token);
-      localStorage.setItem('userName', result.user.name);
-  
-      dispatch(signIn({ email: result.user.email, name: result.user.name }));
+      dispatch(signIn({ email: user.email, name: user.name, token: accessToken }));
   
       alert(`Ласкаво просимо, ${result.user.name}!`);
       navigate('/profile');
