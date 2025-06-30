@@ -15,9 +15,8 @@ const ProfilePage: FC<ProfilePageProps> = () => {
 
     const handleLogout = async () => {
       try {
-        await fetchWithRefresh('http://localhost:5000/api/auth/logout', {
+        await fetchWithRefresh('/auth/logout', {
           method: 'POST',
-          credentials: 'include',
         });
         dispatch(signOut());
         navigate('/signin');

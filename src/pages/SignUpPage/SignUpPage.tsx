@@ -7,6 +7,7 @@ import s from './SignUpPage.module.css';
 import { SignUpFormData, SignUpPageProps } from './SignUpPageTypes';
 import { useAppDispatch } from '../../redux/hooks';
 import { signIn } from '../../redux/slices/userSlice';
+import { fetchBase } from '../../utils/api';
 
 const SignUpPage: FC<SignUpPageProps> = () => {
   const dispatch = useAppDispatch();
@@ -14,12 +15,8 @@ const SignUpPage: FC<SignUpPageProps> = () => {
 
   const handleSignUp = async (data: SignUpFormData) => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/register', {
+      const response = await fetchBase('/auth/register', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        credentials: 'include',
         body: JSON.stringify(data),
       });
   

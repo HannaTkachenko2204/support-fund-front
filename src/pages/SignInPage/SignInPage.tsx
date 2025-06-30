@@ -9,6 +9,7 @@ import { SignInFormData, SignInPageProps } from './SignInPageTypes';
 import { useAppDispatch } from '../../redux/hooks';
 import { signIn } from '../../redux/slices/userSlice';
 import { useAppSelector } from '../../redux/hooks';
+import { fetchBase } from '../../utils/api';
 
 const SignInPage: FC<SignInPageProps> = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,10 +22,8 @@ const SignInPage: FC<SignInPageProps> = () => {
 
   const handleSignIn = async (data: SignInFormData) => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetchBase('/auth/login', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        credentials: 'include',
         body: JSON.stringify({
           email: data.email,
           password: data.password,

@@ -1,38 +1,56 @@
-// хелпер для автоматичного оновлення токена
-export const fetchWithRefresh = async (url: string, options: RequestInit = {}) => {
-    const accessToken = localStorage.getItem('accessToken');
-  
-    const headers = {
-      ...options.headers,
-      Authorization: `Bearer ${accessToken}`,
+// хелпери fetchBase і fetchWithRefresh для автоматичного оновлення токена
+const API_URL = import.meta.env.VITE_API_URL;
+
+export const fetchBase = (endpoint: string, options: RequestInit = {}) => {
+  return fetch(`${API_URL}${endpoint}`, {
+    ...options,
+    headers: {
       'Content-Type': 'application/json',
-    };
-  
-    const response = await fetch(url, { ...options, headers, credentials: 'include' });
-  
-    if (response.status === 401) {
-      // Спробувати оновити токен
-      const refreshRes = await fetch('http://localhost:5000/api/auth/refresh', {
-        method: 'POST',
-        credentials: 'include',
-      });
-  
-      if (refreshRes.ok) {
-        const { accessToken: newAccessToken } = await refreshRes.json();
-        localStorage.setItem('accessToken', newAccessToken);
-  
-        // Повторити оригінальний запит з новим токеном
-        const retryHeaders = {
+      ...options.headers,
+    },
+    credentials: 'include',
+  });
+};
+
+export const fetchWithRefresh = async (endpoint: string, options: RequestInit = {}) => {
+  const accessToken = localStorage.getItem('accessToken');
+
+  const headers = {
+    ...options.headers,
+    Authorization: `Bearer ${accessToken}`,
+    'Content-Type': 'application/json',
+  };
+
+  let response = await fetch(`${API_URL}${endpoint}`, {
+    ...options,
+    headers,
+    credentials: 'include',
+  });
+
+  if (response.status === 401) {
+    // Спроба оновити токен
+    const refreshRes = await fetch(`${API_URL}/auth/refresh`, {
+      method: 'POST',
+      credentials: 'include',
+    });
+
+    if (refreshRes.ok) {
+      const { accessToken: newAccessToken } = await refreshRes.json();
+      localStorage.setItem('accessToken', newAccessToken);
+
+      // Повторити оригінальний запит з новим токеном (await!)
+      response = await fetch(`${API_URL}${endpoint}`, {
+        ...options,
+        headers: {
           ...headers,
           Authorization: `Bearer ${newAccessToken}`,
-        };
-  
-        return fetch(url, { ...options, headers: retryHeaders, credentials: 'include' });
-      } else {
-        throw new Error('Unauthorized and refresh failed');
-      }
+        },
+        credentials: 'include',
+      });
+    } else {
+      throw new Error('Unauthorized and refresh failed');
     }
-  
-    return response;
-  };
-  
+  }
+
+  return response;
+};
