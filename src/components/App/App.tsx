@@ -8,6 +8,7 @@ import HomePage from '../../pages/HomePage/HomePage';
 import SignInPage from '../../pages/SignInPage/SignInPage';
 import SignUpPage from '../../pages/SignUpPage/SignUpPage';
 import ProfilePage from '../../pages/ProfilePage/ProfilePage';
+import ResetPasswordPage from '../../pages/ResetPasswordPage/ResetPasswordPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/reset-password" element={<ResetPasswordPage />} />
         </Routes>
       </main>
       <Footer />

@@ -21,15 +21,10 @@
     /* animation: dropdown 0.3s ease-out; */
     border-radius: 0.375rem;
     border: 1px solid #294d7f;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 400px;
   }
-
-  @media (min-width: 420px) {
-    .modal {
-        min-width: 400px;
-    } 
-}
   
   .closeBtn {
     position: absolute;

@@ -54,12 +54,25 @@ const SignInPage: FC<SignInPageProps> = () => {
     // TODO: Google OAuth redirect / popup
   };
 
-  const handleRecoverPassword = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleRecoverPassword = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Send recovery email to:', recoveryEmail);
-    alert(`Пароль надіслано!`);
-    // TODO: виклик API на відновлення пароля
-    setIsModalOpen(false);
+    try {
+      const response = await fetchBase('/auth/forgot-password', {
+        method: 'POST',
+        body: JSON.stringify({ email: recoveryEmail }),
+      });
+  
+      if (!response.ok) {
+        const errorData = await response.json();
+        alert(errorData.message || 'Помилка при відновленні паролю');
+        return;
+      }
+  
+      alert('Лист з інструкціями надіслано на вашу пошту');
+      setIsModalOpen(false);
+    } catch (error) {
+      alert('Помилка мережі, спробуйте пізніше');
+    }
   };
 
   const scrollToTop = useScrollToTop();
