@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import s from './ResetPasswordPage.module.css';
 import { ResetPasswordPageProps } from './ResetPasswordPageTypes';
 import { fetchBase } from '../../utils/api';
+import Container from '../../components/Container/Container';
 
 const ResetPasswordPage: FC<ResetPasswordPageProps> = () => {
   const [password, setPassword] = useState('');
@@ -43,33 +44,38 @@ const ResetPasswordPage: FC<ResetPasswordPageProps> = () => {
   };
 
   return (
-    <section className={s.container}>
-      <h2>Відновлення паролю</h2>
-      <form className={s.form} onSubmit={handleSubmit}>
-        <label htmlFor="password">Новий пароль</label>
-        <input
-          id="password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Введіть новий пароль"
-          required
-        />
+    <section className={s.section}>
+      <Container>
+        <div className={s.wrapper}>
+          <h2>Відновлення паролю</h2>
+          <form className={s.form} onSubmit={handleSubmit}>
+            <label htmlFor="password">Новий пароль</label>
+            <input
+              id="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Введіть новий пароль"
+              required
+            />
 
-        <label htmlFor="confirmPassword">Підтвердіть пароль</label>
-        <input
-          id="confirmPassword"
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          placeholder="Повторіть новий пароль"
-          required
-        />
-
-        <button type="submit" className={s.submitBtn}>
-          Оновити пароль
-        </button>
-      </form>
+            <label htmlFor="confirmPassword">Підтвердіть пароль</label>
+            <input
+              id="confirmPassword"
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              placeholder="Повторіть новий пароль"
+              required
+            />
+            <div className={s.flex}>
+              <button type="submit" className={s.btn}>
+                Оновити пароль
+              </button>
+            </div>
+          </form>
+        </div>
+      </Container>
     </section>
   );
 };
