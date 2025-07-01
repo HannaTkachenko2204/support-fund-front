@@ -25,7 +25,7 @@ const Footer: FC<FooterProps> = () => {
                     <use xlinkHref="/assets/icons/icons.svg#icon-phone"></use>
                   </svg>
                   Гаряча лінія:
-                  <a href="tel:38002001234">0 800 200 12 34</a>
+                  <a href="tel:38002001234">3 800 200 12 34</a>
                 </span>
               </li>
               <li>
@@ -34,7 +34,7 @@ const Footer: FC<FooterProps> = () => {
                     <use xlinkHref="/assets/icons/icons.svg#icon-envelope"></use>
                   </svg>
                   Email:
-                  <a href="mailto:info@fond-svo.ru">info@fond-zsu.org.ua</a>
+                  <a href="mailto:info.fund.zsu@gmai.com">info.fund.zsu@gmai.com</a>
                 </span>
               </li>
               <li>
