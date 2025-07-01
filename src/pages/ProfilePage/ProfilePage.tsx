@@ -32,7 +32,9 @@ const ProfilePage: FC<ProfilePageProps> = () => {
             <h2>Особистий кабінет</h2>
             <p><strong>Імʼя:</strong> {name || 'Невідомо'}</p>
             <p><strong>Email:</strong> {email || 'Невідомо'}</p>
+            <div className={s.flex}>
             <button onClick={handleLogout} className={s.btn}>Вийти</button>
+            </div>
           </div>
         </Container>
       </section>
