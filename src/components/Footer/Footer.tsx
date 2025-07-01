@@ -34,7 +34,7 @@ const Footer: FC<FooterProps> = () => {
                     <use xlinkHref="/assets/icons/icons.svg#icon-envelope"></use>
                   </svg>
                   Email:
-                  <a href="mailto:info.fund.zsu@gmai.com">info.fund.zsu@gmai.com</a>
+                  <a href="mailto:info.fund.zsu@gmail.com">info.fund.zsu@gmail.com</a>
                 </span>
               </li>
               <li>
